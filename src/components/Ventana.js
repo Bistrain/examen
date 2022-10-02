@@ -9,9 +9,10 @@ const Ventana = () => {
       <div className="ventana"> 
 
         <h1>Fotos: </h1>
-        <img 
-          src={`./imagenes/fondo4.jpg`}
-          alt="imagen1"
+        <img
+          className="imagen-ventana"
+          src={require('../imagenes/fondo4.jpg')}
+          alt='primer imagen'
         />
       </div>
     );

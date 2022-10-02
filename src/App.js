@@ -3,7 +3,7 @@ import React from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Switch
+  Routes
 } from "react-router-dom";
 
 
@@ -16,30 +16,35 @@ import PageNotFound from './components/PageNotFound';
 
 
 function App() {
+ 
+  //  cargar(){
+
+  //   <Ventana />
+
+  //  }
+
 
   return (
+    <Router>
 
-  <Router>
 
-    <div className="contenedor">
-      <h1>Nombres</h1>
-{/*       
-      <Switch>
-        <Route path="/about" component={Inicio} />
-        <Route path="/about" component={Ventana} />
-        <Route path="/about" component={PageNotFound} />
-      </Switch> */}
-      
+      <div className="contenedor">
+        <h1>Nombres</h1>
         
-      <Inicio/>
-      <Ventana/>
-
-        <button className='btn' type="button" >Ir a la sigueiente pagina</button>
+        <Routes>
+          <Route path='/' element={<Inicio/>} />
+          <Route path='/ventana' element={<Ventana/>} />
+          <Route path='/pagenotfound' element={<PageNotFound/>} />          
+        </Routes>
+          
+     
     
-    </div>
-  </Router>
 
+        <button className='btn' type="button" onClick={ ()=> {this.cargar()}}>Ir a la sigueiente pagina</button>
+      
 
+      </div>
+    </Router>
   );
 }
 
