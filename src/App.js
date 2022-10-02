@@ -1,25 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch
+} from "react-router-dom";
+
+
+import Inicio from './components/Inicio';
+import Ventana from './components/Ventana';
+import PageNotFound from './components/PageNotFound';
+
+
+
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+  <Router>
+
+    <div className="contenedor">
+      <h1>Nombres</h1>
+{/*       
+      <Switch>
+        <Route path="/about" component={Inicio} />
+        <Route path="/about" component={Ventana} />
+        <Route path="/about" component={PageNotFound} />
+      </Switch> */}
+      
+        
+      <Inicio/>
+      <Ventana/>
+
+        <button className='btn' type="button" >Ir a la sigueiente pagina</button>
+    
     </div>
+  </Router>
+
+
   );
 }
+
 
 export default App;
